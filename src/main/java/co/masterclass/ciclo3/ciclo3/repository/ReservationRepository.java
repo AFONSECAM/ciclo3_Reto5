@@ -26,7 +26,7 @@ public class ReservationRepository {
     }
 
     public Reservation save(Reservation r){
-        r.setStatus("created");
+//        r.setStatus("created");
         return reservationCrudRepository.save(r);
     }
 
@@ -41,12 +41,12 @@ public class ReservationRepository {
     }
 
     public List<CountClient> getTopClients(){
-        List<CountClient> resultado = new ArrayList<>();
+        List<CountClient> res = new ArrayList<>();
         List<Object[]> report = reservationCrudRepository.countTotalReservationByClient();
         for (int i = 0; i < report.size(); i++) {
-            resultado.add(new CountClient((Integer) report.get(i)[1], (Client) report.get(i)[0]));
+            res.add(new CountClient((Long) report.get(i)[1], (Client) report.get(i)[0]));
         }
-        return resultado;
+        return res;
     }
 
 }

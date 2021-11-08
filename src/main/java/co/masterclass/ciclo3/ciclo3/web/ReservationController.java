@@ -49,4 +49,5 @@ public class ReservationController {
     public List<Reservation> getDatesReport(@PathVariable("dateOne") String d1, @PathVariable("dateTwo") String d2){
         return reservationService.getReservationPeriod(d1, d2);
     }
+
 }

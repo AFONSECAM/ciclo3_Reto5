@@ -1,20 +1,20 @@
 package co.masterclass.ciclo3.ciclo3.model.custom;
 
 public class StatusAmount {
-    private Integer complete;
+    private Integer completed;
     private Integer cancelled;
 
-    public StatusAmount(Integer complete, Integer cancelled) {
-        this.complete = complete;
+    public StatusAmount(Integer completed, Integer cancelled) {
+        this.completed = completed;
         this.cancelled = cancelled;
     }
 
-    public Integer getComplete() {
-        return complete;
+    public Integer getCompleted() {
+        return completed;
     }
 
-    public void setComplete(Integer complete) {
-        this.complete = complete;
+    public void setCompleted(Integer complete) {
+        this.completed = completed;
     }
 
     public Integer getCancelled() {
