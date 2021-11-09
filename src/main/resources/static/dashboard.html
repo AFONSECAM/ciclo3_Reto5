@@ -10,6 +10,13 @@
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        #msj {
+            border-radius: 70px;
+            box-shadow: 9px 9px 59px #585858,
+                -9px -9px 59px #ffffff;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,7 +27,7 @@
             </div>
         </nav>
 
-        <div class="pt-2">
+        <div class="pt-2" id="msj">
             <figure class="text-center">
                 <blockquote class="blockquote">
                     <p id="user"></p>
@@ -105,8 +112,9 @@
             </div>
         </footer>
     </div>
+
     <script>
-        $.get("/user", function(data){
+        $.get("/user", function (data) {
             $("#user").html("Bienvenid@: " + data.name);
         });
     </script>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/reports.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Alquiler de Quadbikes - Ciclo 3 / Reto 3</span>
+                <a class="btn btn-success" href="../dashboard.html">Ir al dashboard</a>
+            </div>
+        </nav>
+
+        <div class="pt-2">
+            <figure class="text-center">
+                <blockquote class="blockquote">
+                    <p>Reports</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Someone famous in <cite title="Source Title">Source Title</cite>
+                </figcaption>
+            </figure>
+        </div>
+
+
+        <div class="row" id="buttons">
+            <!-- <button class="col btn btn-info" type="button" onclick="getCategoryData()">Ver registros</button> -->
+            <button class="col-4 btn btn-primary" type="button" onclick="showByDate()">Reporte por fechas</button>
+            <button class="col-4 btn btn-success" type="button" onclick="reportByStatus()">Reporte por status</button>
+            <button class="col-4 btn btn-info" type="button" onclick="reportByClients()">Reporte por cliente</button>
+        </div>
+
+        <form action="" method="post" class="row">
+            <div id="ByDate" style="display: none;">
+                <div class="col-6 pt-4 pb-4">
+                    <label for="">Start Date</label>
+                    <input class="form-control" type="date" name="startDate" id="startDate" aria-label="Message Text"
+                        required>
+                </div>
+                <div class="col-6 pt-4 pb-4">
+                    <label for="">End Date</label>
+                    <input class="form-control" type="date" name="devolutionDate" id="devolutionDate" required>
+                </div>
+                <button class="btn btn-success col" type="button" onclick="reportByDates()" id="btnBuscar"
+                    style="display: none;">Buscar</button>
+
+                <div id="infoDate" style="display: none;">
+                    <hr>
+                    <table class="table table-hover">
+                        <thead>
+                            <th>Start Date</th>
+                            <th>Devolution Date</th>
+                            <th>Quadbike</th>
+                            <th>Client</th>
+                        </thead>
+                        <tbody id="allItemsDate"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="ByStatus" style="display: none;">
+                <hr>
+                <table class="table table-hover">
+                    <thead>
+                        <th>Completed</th>
+                        <th>Cancelled</th>
+                    </thead>
+                    <tbody id="allItemsStatus"></tbody>
+                </table>
+            </div>
+
+            <div id="ByClient" style="display: none;">
+                <hr>
+                <table class="table table-hover">
+                    <thead>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Total Reservations</th>
+                    </thead>
+                    <tbody id="allItemsClients"></tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
