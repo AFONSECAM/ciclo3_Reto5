@@ -6,7 +6,7 @@ function reportByDates(){
     let dev = $("#devolutionDate").val();
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/api/Reservation/report-dates/" + ini + "/" + dev,
+        url: "http://158.101.116.78:8080/api/Reservation/report-dates/" + ini + "/" + dev,
         type: "GET",
         success: function(response){
             var misItems = response;
@@ -28,7 +28,7 @@ function reportByStatus(){
     $("#ByDate").attr("style", "display: none");
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/api/Reservation/report-status",
+        url: "http://158.101.116.78:8080/api/Reservation/report-status",
         type: "GET",
         success: function(response){            
             $("#allItemsStatus").append("<tr>");
@@ -45,7 +45,7 @@ function reportByClients(){
     $("#ByDate").attr("style", "display: none");   
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/api/Reservation/report-clients",
+        url: "http://158.101.116.78:8080/api/Reservation/report-clients",
         type: "GET",
         success: function(response){
             var misItems = response;
